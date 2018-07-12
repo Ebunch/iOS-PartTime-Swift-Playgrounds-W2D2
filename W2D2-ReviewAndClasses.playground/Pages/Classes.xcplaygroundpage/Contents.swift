@@ -27,6 +27,7 @@ class Box {
 
 var box1 = Box()
 
+
 //: Note: You can use this same syntax (`var count = Int()`)  with numbers and strings, but we rarely do because we can write the "literal" number 0.
 
 //: To access properties, use a .
@@ -48,6 +49,23 @@ box1.area()
 //: Using the Box class as an example, create a new class called Bicycle. Bicycles should have two `Int` properties, `numberOfGears` and `currentGear` (give them sensible default values).
 //:
 //: Bicycles should also have two functions. `gearUp()` and `gearDown()`, which increase and decrease the value in `currentGear`.
+class Bicycle {
+    var numberOfGears: Int = 10
+    var currentGear: Int = 2
+    
+    func gearUp() -> Int{
+        currentGear == currentGear; +1
+        
+        return currentGear
+        
+    }
+    func gearDown() -> Int {
+        currentGear == currentGear; -1
+        
+        return currentGear
+    }
+    }
+    
 
 
 
@@ -55,15 +73,16 @@ box1.area()
 
 //: Test your bicycle out by uncommenting the following code:
  
-//var myBike = Bicycle()
-//
-//myBike.numberOfGears = 16 // upgrade!
-//myBike.gearUp()
-//myBike.gearUp()
-//myBike.gearDown()
-//myBike.gearUp()
-//
-//print("my bike is in the \(myBike.currentGear)rd gear")
+var myBike = Bicycle()
+myBike.numberOfGears = 16 // upgrade!
+myBike.gearUp()
+myBike.gearUp()
+
+myBike.gearDown()
+myBike.gearUp()
+
+print("my bike is in the \(myBike.currentGear)rd gear")
+
 
 
 //: ## Challenge 2
@@ -107,7 +126,22 @@ brightBulb.watts
 //:
 //: Hint: don't forget to supply a number of gears when you create your bicycles!
 
-
+class Bicycle {
+    let numberOfGears: Int
+    var currentGear: Int = 1
+    
+    func gearUp() {
+        currentGear = currentGear + 1
+    }
+    
+    func gearDown() {
+        currentGear = currentGear - 1
+    }
+    
+    init(gears: Int) {
+        self.numberOfGears = gears
+    }
+}
 
 
 
@@ -126,6 +160,20 @@ brightBulb.watts
 //: The syntax for subclassing can be found in the Swift Cheat Sheet included with this Playground.
 //:
 //: Hint: height * width * depth = the area of a cube
+class Cube: Box {
+    var depth: Double = 0
+    
+    override func area() -> Double {
+        return depth * width * height
+    }
+}
+
+let myCube = Cube()
+myCube.depth = 10
+myCube.height = 5
+myCube.width = 3
+
+myCube.area()
 
 
 
